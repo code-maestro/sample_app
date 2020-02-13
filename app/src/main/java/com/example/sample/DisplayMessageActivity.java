@@ -21,9 +21,6 @@ public class DisplayMessageActivity extends AppCompatActivity {
         messageView.setText(message);
     }
     public void onClose(View view) {
-
         super.finish();
-
-    }
-
+        }
     }

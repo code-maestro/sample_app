@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("MESSAGE", message.getText().toString());
 
         startActivity(intent);
+
         message.setText("");
     }
 }
