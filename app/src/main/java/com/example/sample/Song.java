@@ -1,7 +1,6 @@
 package com.example.sample;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -12,7 +11,6 @@ public class Song extends AppCompatActivity {
 
     Button playbtn, stopbtn;
     MediaPlayer mPlayer;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +39,5 @@ public class Song extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
