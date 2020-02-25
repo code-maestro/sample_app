@@ -35,7 +35,7 @@
 
     <Button
         android:id="@+id/sendButton"
-        android:layout_width="250dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:onClick="sendMessage"
@@ -46,5 +46,17 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/message"
         app:layout_constraintTop_toBottomOf="@+id/message" />
+
+    <Button
+        android:id="@+id/splash_btn"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:background="@drawable/design"
+        android:onClick="pushToSplash"
+        android:text=" view splash trial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/sendButton"
+        app:layout_constraintStart_toStartOf="@+id/sendButton"
+        app:layout_constraintTop_toBottomOf="@+id/sendButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

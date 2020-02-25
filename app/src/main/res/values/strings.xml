@@ -3,11 +3,12 @@
     <string name="trial">Trial</string>
     <string name="msg">Enter message...</string>
     <string name="hint">Enter a message here</string>
-    <string name="song">higher</string>
+    <string name="song">song</string>
     <string name="text"> text </string>
     <string name="stopbtn">STOP</string>
     <string name="playbtn">PLAY</string>
     <string name="textview" />
-    <string name="desc">mikael\'s first native app...</string>
-    <string name="recycler_view">recycler view</string>
+    <string name="desc"> THE SPLASH \n SCREEN </string>
+    <string name="recycler_view">Recycler View</string>
+
 </resources>

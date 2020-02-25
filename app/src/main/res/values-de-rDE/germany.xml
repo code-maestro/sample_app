@@ -8,4 +8,7 @@
     <string name="text"> text </string>
     <string name="stopbtn">STOP</string>
     <string name="playbtn">PLAY</string>
+    <string name="textview"/>
+    <string name="desc">mikael\'s first native app...</string>
+    <string name="recycler_view">Recycler View</string>
 </resources>
