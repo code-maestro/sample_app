@@ -3,6 +3,8 @@ package com.example.sample;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -13,10 +15,34 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    // AN INNER CLASS FOR THE BROADCAST RECEIVER .
+    //public class receiver extends BroadcastReceiver{
+
+
+    //}
+
+    MyReceiver myReceiverObj = new MyReceiver(){
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            int x = intent.getIntExtra("LEVEL ", 0);
+
+            ProgressBar myProgressBar = findViewById(R.id.progressBar);
+
+            myProgressBar.setProgress(x);
+
+            super.onReceive(context, intent);
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
