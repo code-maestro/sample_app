@@ -3,4 +3,8 @@
     <item android:id="@+id/song" android:title="@string/song"/>
     <item android:id="@+id/text" android:title="@string/text"/>
     <item android:id="@+id/recycler" android:title="@string/recycler_view"/>
+    <item android:id="@+id/implicit" android:title="@string/implicit"/>
+    <item android:id="@+id/c" android:title="C"/>
+    <item android:id="@+id/call" android:title="call"/>
+    <item android:id="@+id/email" android:title="mail"/>
 </menu>

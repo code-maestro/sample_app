@@ -51,12 +51,35 @@
         android:id="@+id/splash_btn"
         android:layout_width="150dp"
         android:layout_height="48dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/design"
         android:onClick="pushToSplash"
         android:text=" view splash trial"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/sendButton"
+        app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="@+id/sendButton"
         app:layout_constraintTop_toBottomOf="@+id/sendButton" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_btn"
+        app:layout_constraintVertical_bias="0.245" />
+
+    <TextView
+        android:id="@+id/textField"
+        android:layout_width="67dp"
+        android:layout_height="18dp"
+        android:text="@string/textField"
+        app:layout_constraintBottom_toTopOf="@+id/heading"
+        app:layout_constraintEnd_toEndOf="@+id/heading"
+        app:layout_constraintStart_toStartOf="@+id/heading"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

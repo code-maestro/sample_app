@@ -5,10 +5,12 @@
     <string name="hint">Enter a message here</string>
     <string name="song">song</string>
     <string name="text"> text </string>
+    <string name="implicit"> IMPLICIT INTENT</string>
     <string name="stopbtn">STOP</string>
     <string name="playbtn">PLAY</string>
     <string name="textview" />
     <string name="desc"> THE SPLASH \n SCREEN </string>
     <string name="recycler_view">Recycler View</string>
+    <string name="textField">Menks</string>
 
 </resources>

@@ -55,6 +55,5 @@ public class Text extends AppCompatActivity {
                         "  " + arrayList.get(i), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }
