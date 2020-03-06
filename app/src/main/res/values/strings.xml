@@ -12,5 +12,13 @@
     <string name="desc"> THE SPLASH \n SCREEN </string>
     <string name="recycler_view">Recycler View</string>
     <string name="textField">Menks</string>
+    
+    <string-array name="apps">
+        <item>keeps</item>
+        <item>podcasts</item>
+        <item>maps</item>
+        <item>maths</item>
+        <item>one</item>
+    </string-array>
 
 </resources>
