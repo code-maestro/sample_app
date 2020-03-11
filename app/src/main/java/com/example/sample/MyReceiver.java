@@ -3,6 +3,7 @@ package com.example.sample;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 import android.view.Gravity;
 import android.widget.Toast;
 
@@ -14,12 +15,14 @@ public class MyReceiver extends BroadcastReceiver {
         // an Intent broadcast.
 
         // TOAST DISPALYING THE END OF THE ALARM
-        Toast toast = Toast.makeText(context, "Time is UP dwagg", Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(context, "Time is UP DWAG..", Toast.LENGTH_LONG);
 
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();
 
+        //vibrate the  phone
+        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(4000);
 
-        throw new UnsupportedOperationException("Not yet implemented");
     }
 }
