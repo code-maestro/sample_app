@@ -76,12 +76,18 @@ public class MainActivity extends AppCompatActivity {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         //CALLING THE ALARM
+      alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+(time* 1000),
+              pendingIntent);
 
+      // TOAST TO DISPLAY THE ALARM TIME
+
+        Toast.makeText(this, "Alarm set in"+time+"seconds", Toast.LENGTH_LONG).show();
 
     }
 
     public void pushToSplash(View view) {
-        startActivity(new Intent(this, SplashScreen.class));
+        startActivity(new Intent(this,
+                SplashScreen.class));
     }
 
     public void sendMessage(View view) {
