@@ -21,9 +21,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".Cprogram" />
-        <activity android:name=".RViewActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Cprogram"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".Text" />
         <activity android:name=".Song" />
         <activity android:name=".DisplayMessageActivity" />
