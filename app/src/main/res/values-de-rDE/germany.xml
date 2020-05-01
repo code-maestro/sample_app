@@ -10,5 +10,8 @@
     <string name="playbtn">PLAY</string>
     <string name="textview"/>
     <string name="desc">mikael\'s first native app...</string>
+    <string name="c_program">c program</string>
     <string name="recycler_view">Recycler View</string>
+    <string name="textField">Menks</string>
+    <string name="implicit"> implicit intent</string>
 </resources>

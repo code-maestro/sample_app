@@ -1,19 +1,20 @@
 package com.example.sample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreen extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        /**
-         * Create Thread that will sleep for 3 seconds****/
+        /*
+         * Create Thread that will sleep for 3 seconds
+         *
+         * **/
         Thread background = new Thread() {
             public void run() {
                 try {

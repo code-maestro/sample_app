@@ -4,7 +4,10 @@
     <item android:id="@+id/text" android:title="@string/text"/>
     <item android:id="@+id/recycler" android:title="@string/recycler_view"/>
     <item android:id="@+id/implicit" android:title="@string/implicit"/>
-    <item android:id="@+id/c" android:title="C"/>
-    <item android:id="@+id/call" android:title="call"/>
-    <item android:id="@+id/email" android:title="mail"/>
+    <item android:id="@+id/c" android:title="@string/c_program"/>
+    <item android:id="@+id/call" android:title="@string/call"/>
+    <item android:id="@+id/email" android:title="@string/mail"/>
+    <item android:id="@+id/counter" android:title="@string/alarm_counter"/>
+    <item android:id="@+id/sqlite" android:title="Database"/>
+
 </menu>

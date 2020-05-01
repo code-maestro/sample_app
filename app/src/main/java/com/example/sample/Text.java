@@ -2,20 +2,19 @@ package com.example.sample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.AssetManager;
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 public class Text extends AppCompatActivity {
+
+    DatabaseHelper databaseHelper;
 
     ListView list;
 
@@ -25,35 +24,42 @@ public class Text extends AppCompatActivity {
         setContentView(R.layout.activity_text);
 
         list = findViewById(R.id.list);
+        databaseHelper = new DatabaseHelper(this);
+
+        populateList();
+
+    }
+
+    public void populateList(){
+        Cursor data = databaseHelper.getData();
 
         final ArrayList<String> arrayList = new ArrayList<>();
 
-        arrayList.add(" Morbius  ");
-        arrayList.add(" Black widow ");
-        arrayList.add(" X-men ");
-        arrayList.add(" Terminator ");
-        arrayList.add(" Hitman ");
+        while (data.moveToNext()){
+            arrayList.add(data.getString(1));
+        }
+
         arrayList.add(" Grand Theft Auto ");
-        arrayList.add(" Vickie ");
         arrayList.add(" Ty dolla Sign ");
         arrayList.add(" Wiz khalifa ");
         arrayList.add(" Drake ");
         arrayList.add(" Trophies ");
-        arrayList.add("official");
-        arrayList.add(" chune ");
 
-
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
-                arrayList);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout
+                .simple_list_item_1, arrayList);
 
         list.setAdapter(arrayAdapter);
-        
+
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
-                Toast.makeText(Text.this, "You've clicked :   " + i +
-                        "  " + arrayList.get(i), Toast.LENGTH_SHORT).show();
-            }
-        });
+
+                String name = arrayList.get(i);
+
+                Toast.makeText(Text.this, " YOU HAVE CLICKED  " + name, Toast.LENGTH_SHORT).show();
+
+
+        }
+    });
     }
 }

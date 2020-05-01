@@ -14,9 +14,10 @@ public class MyReceiver extends BroadcastReceiver {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
 
-        // TOAST DISPALYING THE END OF THE ALARM
+        // TOAST DISPLAYING THE END OF THE ALARM
         Toast toast = Toast.makeText(context, "Time is UP DWAG..", Toast.LENGTH_LONG);
 
+        //SETTING THE LOCATION OF THE TOAST
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();
 
