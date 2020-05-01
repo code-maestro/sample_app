@@ -149,10 +149,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, Main2Activity.class));
                 return true;
 
-            case R.id.counter:
-                startActivity(new Intent(this, CountDownAnimation.class));
-                return true;
-
             case R.id.call:
 
                 Intent mycall;
