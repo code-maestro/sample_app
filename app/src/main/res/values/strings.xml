@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">mikael</string>
     <string name="trial">Trial</string>
-    <string name="msg">Enter message...</string>
+    <string name="msg">Enter message </string>
     <string name="hint">Enter a message here</string>
     <string name="song">song</string>
     <string name="text"> list view </string>

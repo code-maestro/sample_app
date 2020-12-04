@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="call">call</string>
+    <string name="call">Anrufe</string>
     <string name="mail">mail</string>
-    <string name="start_alarm">START ALARM</string>
+    <string name="start_alarm">STARTEN</string>
     <string name="alarm_time">Enter the counter time</string>
-    <string name="stop_alarm">STOP ALARM</string>
+    <string name="stop_alarm">STOP</string>
+    <string name="send">SENDEN</string>
+    <string name="alarm_counter">alarm counter</string>
+    <string name="stored_msg_header">STORED MESSAGES</string>
+    <string name="stored_messages">STORED MESSAGES</string>
+    <string name="stored_messages_hint">STORED MESSAGES TO APPEAR HERE</string>
 </resources>
