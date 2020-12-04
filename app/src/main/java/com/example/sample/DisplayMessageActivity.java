@@ -12,10 +12,18 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class DisplayMessageActivity extends AppCompatActivity {
+
+    File myExternalFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +34,13 @@ public class DisplayMessageActivity extends AppCompatActivity {
         String message = intent.getStringExtra("MESSAGE");
         TextView messageView = findViewById(R.id.messageTextView);
 
+        TextView storedMessages = findViewById(R.id.stored_messages);
+
         messageView.setText(message);
 
         writeToInternal(message);
+
+        storedMessages.setText(readToInternal());
 
     }
 
@@ -42,14 +54,32 @@ public class DisplayMessageActivity extends AppCompatActivity {
         try {
             fileOutputStream = openFileOutput(fileName, Context.MODE_APPEND);
             fileOutputStream.write(msg.getBytes());
-            Toast.makeText(this,
-                    "A NEW MESSAGE BEEN APPEND TO THE messages FILE ON THE INTERNAL MEMORY",
-                    Toast.LENGTH_SHORT).show();
             fileOutputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    public String readToInternal(){
+
+        StringBuilder storedMessage = new StringBuilder();
+
+        try {
+            FileInputStream fis = new FileInputStream(myExternalFile);
+            DataInputStream in = new DataInputStream(fis);
+            BufferedReader br =
+                    new BufferedReader(new InputStreamReader(in));
+            String strLine;
+            while ((strLine = br.readLine()) != null) {
+                storedMessage.append(strLine);
+            }
+            in.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return storedMessage.toString();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -82,6 +112,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         }
 
     }
+
 
     public void onClose(View view) {
         super.finish();

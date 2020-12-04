@@ -38,8 +38,13 @@ public class MainActivity extends AppCompatActivity {
             ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
             bar.setProgress(battery);
             TextView textView = (TextView) findViewById(R.id.textField);
-            //textView.setText("BATTERY LEVEL : " + Integer.toString(battery) + "%");
 
+            String battery_level = "BATTERY LEVEL : " +
+                    battery +
+                    "%";
+
+            //String battery_level = String.format("%f", battery);
+            textView.setText(battery_level);
         }
     };
 

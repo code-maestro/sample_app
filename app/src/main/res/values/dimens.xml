@@ -10,5 +10,6 @@
     <dimen name="editText_height">40dp</dimen>
     <dimen name="editText_width">250dp</dimen>
     <dimen name="btn_block_width">250dp</dimen>
-    <dimen name="fontSize">20sp</dimen>
+    <dimen name="fontSize">17sp</dimen>
+    <dimen name="alarmFontSize">14sp</dimen>
 </resources>
