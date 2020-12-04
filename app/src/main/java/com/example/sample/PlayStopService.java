@@ -12,6 +12,7 @@ public class PlayStopService extends Service {
     private MediaPlayer mPlayer;
 
     @Override
+
     public IBinder onBind(Intent intent) {
         return null;
     }

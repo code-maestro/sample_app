@@ -30,10 +30,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         writeToInternal(message);
 
-
-
     }
 
+    //  METHOD TO WRITE TO INTERNAL STORAGE
     public void writeToInternal(String message){
         String msg = message;
 
