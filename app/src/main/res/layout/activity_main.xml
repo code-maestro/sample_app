@@ -10,7 +10,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
     <TextView
@@ -63,7 +63,7 @@
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="@dimen/btn_width"
-        android:layout_height="10dp"
+        android:layout_height="30dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/textField"
         app:layout_constraintEnd_toEndOf="@+id/sendButton"
@@ -128,20 +128,6 @@
         app:layout_constraintEnd_toEndOf="@+id/textField"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textField" />
-
-    <Button
-        android:id="@+id/service_btn"
-        android:layout_width="132dp"
-        android:layout_height="41dp"
-        android:background="@drawable/design"
-        android:onClick="startOrStopService()"
-        android:text="start service"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alarmbtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

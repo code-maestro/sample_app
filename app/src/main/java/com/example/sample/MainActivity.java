@@ -29,7 +29,6 @@ import androidx.core.content.ContextCompat;
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 1;
-    private Button servicebtn;
 
     BroadcastReceiver r = new BroadcastReceiver() {
 
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
             bar.setProgress(battery);
             TextView textView = (TextView) findViewById(R.id.textField);
-            textView.setText("BATTERY LEVEL : " + Integer.toString(battery) + "%");
+            //textView.setText("BATTERY LEVEL : " + Integer.toString(battery) + "%");
 
         }
     };
@@ -59,20 +58,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         registerReceiver(r, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-
-        servicebtn = findViewById(R.id.service_btn);
-
-
-
     }
-
-
 
     public void clickMe(View view) {
         EditText startAlarm = findViewById(R.id.startAlarm);
         String counter_time = startAlarm.getText().toString();
 
-        if (!counter_time.isEmpty()){
+        if (!counter_time.isEmpty()) {
 
             int time = Integer.parseInt(counter_time);
 
@@ -81,19 +73,18 @@ public class MainActivity extends AppCompatActivity {
 
             //creating a pending intent
             PendingIntent pendingIntent = PendingIntent.getBroadcast
-                    (this.getApplicationContext(),0,intent,0);
+                    (this.getApplicationContext(), 0, intent, 0);
 
             //real time clock
             AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
             //CALLING THE ALARM
-            alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+
-                            (time* 1000), pendingIntent);
+            alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() +
+                    (time * 1000), pendingIntent);
 
             // TOAST TO DISPLAY THE ALARM TIME
-            Toast.makeText(this, "Alarm set in"+time+"seconds", Toast.LENGTH_LONG).show();
-        }
-        else {
+            Toast.makeText(this, "Alarm set in" + time + "seconds", Toast.LENGTH_LONG).show();
+        } else {
             Toast toast = Toast.makeText(this, "PLEASE ENTER THE COUNTER TIME ! ",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 220);
@@ -106,14 +97,17 @@ public class MainActivity extends AppCompatActivity {
         EditText message = findViewById(R.id.message);
         String msg = message.getText().toString();
 
-        if (!msg.isEmpty()){
+        if (!msg.isEmpty()) {
             Intent intent = new Intent(this, DisplayMessageActivity.class);
             intent.putExtra("MESSAGE", msg);
             startActivity(intent);
-        }else{
+
+            message.setText("");
+
+        } else {
             Toast mytoast = Toast.makeText(this, "PLEASE ENTER A MESSAGE TO SEND ! ", Toast.LENGTH_SHORT);
             mytoast.setGravity(Gravity.CENTER, 0, -600);
-                    mytoast.show();
+            mytoast.show();
             message.requestFocus();
         }
 
@@ -160,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                             new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
 
                     return true;
-                }else {
+                } else {
                     mycall = new Intent(Intent.ACTION_CALL, Uri.parse("tel:0706440333"));
                     Toast.makeText(this, "PERMISSION GRANTED", Toast.LENGTH_SHORT)
                             .show();
@@ -171,8 +165,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.setData(Uri.parse("mailto:"));
                 String to[] = {"killopoop@gmail.com",
-                                "edgarbaluku@gmail.com",
-                                "derek.barigye@gmail.com"};
+                        "edgarbaluku@gmail.com",
+                        "derek.barigye@gmail.com"};
                 email.putExtra(Intent.EXTRA_EMAIL, to);
                 email.putExtra(Intent.EXTRA_SUBJECT, "EMAIL WORK ANDROID");
                 email.putExtra(Intent.EXTRA_TEXT, "MF JUST WORK ");
@@ -183,21 +177,5 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    public void startOrStopService(){
-        if( RecordingService.isRunning ){
-
-            // Stop service
-            Intent intent = new Intent(this, RecordingService.class);
-            stopService(intent);
-
-        }else {
-
-            // Start service
-            Intent intent = new Intent(this, RecordingService.class);
-            startService(intent);
-        }
-    }
-
 }
 
