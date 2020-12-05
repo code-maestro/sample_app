@@ -178,6 +178,11 @@ public class MainActivity extends AppCompatActivity {
                 email.setType("message/rfc822");
                 startActivity(email);
 
+
+            case R.id.int_ext:
+                startActivity(new Intent(this, InternalExternal.class));
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

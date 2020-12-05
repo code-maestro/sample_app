@@ -20,9 +20,14 @@
     <string name="alarm_time">Enter counter time for alarm</string>
     <string name="stop_alarm">STOP</string>
     <string name="alarm_counter">alarm counter</string>
-    <string name="stored_msg_header">STORED MESSAGES</string>
+    <string name="stored_msg_header">INTERNAL STORED MESSAGES</string>
+    <string name="stored_msg_header2">EXTERNAL STORED MESSAGES</string>
     <string name="stored_messages">STORED MESSAGES</string>
     <string name="stored_messages_hint">STORED MESSAGES TO APPEAR HERE</string>
+    <string name="HINY">enter message to be stored</string>
+    <string name="hint2">message to be displayed here</string>
+    <string name="database">Database</string>
+    <string name="int_ext">InternalExternal</string>
 
     <string-array name="apps">
         <item>keeps</item>

@@ -8,6 +8,7 @@
     <item android:id="@+id/call" android:title="@string/call"/>
     <item android:id="@+id/email" android:title="@string/mail"/>
     <item android:id="@+id/counter" android:title="@string/alarm_counter"/>
-    <item android:id="@+id/sqlite" android:title="Database"/>
+    <item android:id="@+id/sqlite" android:title="@string/database"/>
+    <item android:id="@+id/int_ext" android:title="@string/int_ext"/>
 
 </menu>
