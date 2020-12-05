@@ -14,7 +14,6 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,15 +55,15 @@ public class InternalExternal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 writeToInternal();
-                writeExternal();
+                writeToExternal();
             }
         });
 
         readButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               readExternal();
-               readInternal();
+               readFromExternal();
+               readFromInternal();
             }
         });
 
@@ -90,7 +89,7 @@ public class InternalExternal extends AppCompatActivity {
         }
     }
 
-    private void writeExternal() {
+    private void writeToExternal() {
         try {
             FileOutputStream fos = new FileOutputStream(myExternalFile);
             fos.write(inputText.getText().toString().getBytes());
@@ -104,7 +103,7 @@ public class InternalExternal extends AppCompatActivity {
                 Toast.LENGTH_SHORT).show();
     }
 
-    private void readInternal() {
+    private void readFromInternal() {
 
         try {
             FileInputStream fis = new FileInputStream(myInternalFile);
@@ -124,7 +123,7 @@ public class InternalExternal extends AppCompatActivity {
 
     }
 
-    private void readExternal(){
+    private void readFromExternal(){
         try {
             FileInputStream fis = new FileInputStream(myExternalFile);
             DataInputStream in = new DataInputStream(fis);
