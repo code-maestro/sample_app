@@ -8,7 +8,10 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +26,14 @@ import java.util.ArrayList;
 
 public class DisplayMessageActivity extends AppCompatActivity {
 
+    private String filename = "StoredMessages.txt";
+    private String filepath = "MESSAGES";
+    EditText storedMessages;
+    Button readExternalBtn;
     File myExternalFile;
+    String myData = "";
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +42,21 @@ public class DisplayMessageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra("MESSAGE");
         TextView messageView = findViewById(R.id.messageTextView);
-
-        TextView storedMessages = findViewById(R.id.stored_messages);
+        readExternalBtn = findViewById(R.id.readBtn);
+        storedMessages = findViewById(R.id.stored_messages);
 
         messageView.setText(message);
 
+        readExternalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readFromInternal();
+            }
+        });
+
         writeToInternal(message);
 
-        storedMessages.setText(readToInternal());
+        //writeToExternal(message);
 
     }
 
@@ -49,8 +65,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
         String msg = message;
 
         String fileName= "messages";
-        // String textToWrite = "Hello, World!";
+
         FileOutputStream fileOutputStream;
+
         try {
             fileOutputStream = openFileOutput(fileName, Context.MODE_APPEND);
             fileOutputStream.write(msg.getBytes());
@@ -61,7 +78,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
     }
 
-    public String readToInternal(){
+    public void readFromInternal(){
 
         StringBuilder storedMessage = new StringBuilder();
 
@@ -79,40 +96,92 @@ public class DisplayMessageActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        return storedMessage.toString();
+        String data = storedMessage.toString();
+
+        storedMessages.setText(data);
+
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void writeToExternal(String message){
 
-        String state = Environment.getExternalStorageState();
+    String msg = message;
 
-        if (state.equals(Environment.MEDIA_MOUNTED)) {
+        try {
+            FileOutputStream fos = new FileOutputStream(myExternalFile);
+            fos.write(msg.getBytes());
+            Log.d("external", "writeToExternal: FILE WRITTEN TO EXTERNAL STORAGE");
+            fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-            // Available to read and write
-            Toast.makeText(this,
-                    "EXTERNAL STORAGE MOUNTED",
+        if (!isExternalStorageAvailable() || isExternalStorageReadOnly()) {
+            Toast.makeText(this, "NO EXTERNAL STORAGE MEDIA MOUNTED",
                     Toast.LENGTH_SHORT).show();
-
-            // Access your app's directory in the device's Public documents directory
-            File docs = new File(Environment.getExternalStoragePublicDirectory(
-                    Environment.DIRECTORY_DOCUMENTS), "MESSAGES");
-
-        }
-        else {
-            Toast.makeText(this,
-                    "EXTERNAL STORAGE NOT MOUNTED",
-                    Toast.LENGTH_SHORT).show();
-
+        }else{
+            myExternalFile = new File(getExternalFilesDir(filepath), filename);
+            Toast.makeText(this, "FILE CREATED", Toast.LENGTH_SHORT).show();
         }
 
-        if (state.equals(Environment.MEDIA_MOUNTED) ||
-                state.equals(Environment.MEDIA_MOUNTED_READ_ONLY)) {
-            // Available to at least read
-        }
+//        String state = Environment.getExternalStorageState();
+//
+//        if (state.equals(Environment.MEDIA_MOUNTED)) {
+//
+//            // Available to read and write
+//            Toast.makeText(this,
+//                    "EXTERNAL STORAGE MOUNTED",
+//                    Toast.LENGTH_SHORT).show();
+//
+//            // Access your app's directory in the device's Public documents directory
+//            File docs = new File(Environment.getExternalStoragePublicDirectory(
+//                    Environment.DIRECTORY_DOCUMENTS), "MESSAGES");
+//
+//        }
+//        else {
+//            Toast.makeText(this,
+//                    "EXTERNAL STORAGE NOT MOUNTED",
+//                    Toast.LENGTH_SHORT).show();
+//
+//        }
+//
+//        if (state.equals(Environment.MEDIA_MOUNTED) ||
+//                state.equals(Environment.MEDIA_MOUNTED_READ_ONLY)) {
+//            // Available to at least read
+//        }
 
     }
 
+    public void readFromExternal(){
+        try {
+            FileInputStream fis = new FileInputStream(myExternalFile);
+            DataInputStream in = new DataInputStream(fis);
+            BufferedReader br =
+                    new BufferedReader(new InputStreamReader(in));
+            String strLine;
+            while ((strLine = br.readLine()) != null) {
+                myData = myData + strLine;
+                Log.d("external", "readFromExternal: " + myData);
+            }
+            in.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        storedMessages.setText(myData);
+
+        Toast.makeText(this,
+                "StoredMessages.txt data retrieved from Internal Storage...",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private static boolean isExternalStorageReadOnly() {
+        String extStorageState = Environment.getExternalStorageState();
+        return Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState);
+    }
+
+    private static boolean isExternalStorageAvailable() {
+        String extStorageState = Environment.getExternalStorageState();
+        return Environment.MEDIA_MOUNTED.equals(extStorageState);
+    }
 
     public void onClose(View view) {
         super.finish();
