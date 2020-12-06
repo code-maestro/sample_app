@@ -41,12 +41,12 @@ public class InternalExternal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internal_external);
 
-        inputText = (EditText) findViewById(R.id.data);
-        internal = (EditText) findViewById(R.id.stored_messages);
-        external = (EditText) findViewById(R.id.external_stored_messages);
+        inputText = findViewById(R.id.data);
+        internal = findViewById(R.id.stored_messages);
+        external = findViewById(R.id.external_stored_messages);
 
         saveButton = findViewById(R.id.saveButton);
-        readButton = (Button) findViewById(R.id.readButton);
+        readButton = findViewById(R.id.readButton);
 
         // Retrieving Files from the internal storage directory
         myInternalFile = new File(getFilesDir(), InternalFileName);

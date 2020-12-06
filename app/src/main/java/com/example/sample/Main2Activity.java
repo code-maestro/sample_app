@@ -36,7 +36,9 @@ public class Main2Activity extends AppCompatActivity {
                     entry.setText("");
                     entry.requestFocus();
                 }else {
-                    Toast.makeText(Main2Activity.this, "ENTER DATA TO STORE IN THE DATABASE", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main2Activity.this,
+                            "ENTER DATA TO STORE IN THE DATABASE",
+                            Toast.LENGTH_SHORT).show();
                     entry.requestFocus();
                 }
             }

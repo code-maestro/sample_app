@@ -56,7 +56,9 @@ public class Text extends AppCompatActivity {
 
                 String name = arrayList.get(i);
 
-                Toast.makeText(Text.this, " YOU HAVE CLICKED  " + name, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Text.this,
+                        " YOU HAVE CLICKED  " + name,
+                        Toast.LENGTH_SHORT).show();
 
 
         }

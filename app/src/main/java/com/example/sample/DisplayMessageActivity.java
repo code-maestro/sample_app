@@ -27,9 +27,10 @@ public class DisplayMessageActivity extends AppCompatActivity {
     private String filename = "StoredMessages.txt";
     private String filepath = "MESSAGES";
     EditText storedMessages;
-    Button readExternalBtn;
-    File myExternalFile;
+    Button readInternalBtn;
+    File myInternalFile;
     String myData = "";
+    private String mInternalFileName;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -40,12 +41,12 @@ public class DisplayMessageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra("MESSAGE");
         TextView messageView = findViewById(R.id.messageTextView);
-        readExternalBtn = findViewById(R.id.readButton);
+        readInternalBtn = findViewById(R.id.readButton);
         storedMessages = findViewById(R.id.stored_messages);
 
         messageView.setText(message);
 
-        readExternalBtn.setOnClickListener(new View.OnClickListener() {
+        readInternalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 readFromInternal();
@@ -60,12 +61,12 @@ public class DisplayMessageActivity extends AppCompatActivity {
     public void writeToInternal(String message){
         String msg = message;
 
-        String fileName= "messages";
+        mInternalFileName = "messages";
 
         FileOutputStream fileOutputStream;
 
         try {
-            fileOutputStream = openFileOutput(fileName, Context.MODE_APPEND);
+            fileOutputStream = openFileOutput(mInternalFileName, Context.MODE_APPEND);
             fileOutputStream.write(msg.getBytes());
             fileOutputStream.close();
         } catch (Exception e) {
@@ -78,8 +79,10 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         StringBuilder storedMessage = new StringBuilder();
 
+        myInternalFile = new File(getFilesDir(), mInternalFileName);
+
         try {
-            FileInputStream fis = new FileInputStream(myExternalFile);
+            FileInputStream fis = new FileInputStream(myInternalFile);
             DataInputStream in = new DataInputStream(fis);
             BufferedReader br =
                     new BufferedReader(new InputStreamReader(in));
