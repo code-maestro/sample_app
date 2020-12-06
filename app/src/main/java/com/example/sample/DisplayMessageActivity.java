@@ -24,12 +24,9 @@ import java.io.InputStreamReader;
 
 public class DisplayMessageActivity extends AppCompatActivity {
 
-    private String filename = "StoredMessages.txt";
-    private String filepath = "MESSAGES";
     EditText storedMessages;
     Button readInternalBtn;
     File myInternalFile;
-    String myData = "";
     private String mInternalFileName;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
