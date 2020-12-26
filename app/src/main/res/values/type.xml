@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style
+        name="TextAppearance.MyTheme.Headline3"
+        parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">
+            @font/coolest
+        </item>
+    </style>
+    <style
+        name="TextAppearance.MyTheme.Headline4"
+        parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">
+            @font/coolest
+        </item>
+    </style>
+
+    <style
+        name="TextAppearance.MyTheme.Headline5"
+        parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">
+            @font/coolest
+        </item>
+    </style>
+
+    <style
+        name="TextAppearance.MyTheme.Subtitle1"
+        parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">
+            @font/coolest
+        </item>
+    </style>
+
+</resources>

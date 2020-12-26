@@ -20,20 +20,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InternalExternal"></activity>
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".RecView" />
 
         <receiver
             android:name=".MyReceiver"
             android:enabled="true"
             android:exported="true" />
 
+        <activity android:name=".InternalExternal"/>
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".RecView" />
         <activity android:name=".Cprogram" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Text" />
-        <activity android:name=".Song" />
+        <activity
+            android:name=".Song"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
         <activity android:name=".DisplayMessageActivity" />
+
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +50,12 @@
             android:name=".PlayStopService"
             android:enabled="true"
             android:exported="false" />
+
+        <provider
+            android:authorities="com.example.myApp"
+            android:name=".MyContentProvider"
+            android:exported="false" />
+
     </application>
 
 </manifest>

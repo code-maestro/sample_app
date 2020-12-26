@@ -16,11 +16,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -115,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
             mytoast.show();
             message.requestFocus();
         }
-
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -169,12 +168,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.email:
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.setData(Uri.parse("mailto:"));
-                String to[] = {"killopoop@gmail.com",
+                String[] to = {"killopoop@gmail.com",
                         "edgarbaluku@gmail.com",
                         "derek.barigye@gmail.com"};
                 email.putExtra(Intent.EXTRA_EMAIL, to);
                 email.putExtra(Intent.EXTRA_SUBJECT, "EMAIL WORK ANDROID");
-                email.putExtra(Intent.EXTRA_TEXT, "MF JUST WORK ");
+                email.putExtra(Intent.EXTRA_TEXT, "JUST WORK ");
                 email.setType("message/rfc822");
                 startActivity(email);
 

@@ -15,13 +15,13 @@
 
     <TextView
         android:id="@+id/heading"
+        style="@style/TextAppearance.MyTheme.Headline4"
         android:layout_width="246dp"
         android:layout_height="36dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:text="@string/msg"
         android:textAlignment="center"
-        android:textSize="@dimen/fontSize"
         app:layout_constraintBottom_toTopOf="@+id/message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -39,20 +39,40 @@
         android:hint="@string/hint"
         android:inputType="textPersonName"
         android:textAlignment="center"
-        android:textSize="@dimen/fontSize"
+        style="@style/TextAppearance.MyTheme.Subtitle1"
         app:layout_constraintBottom_toTopOf="@+id/sendButton"
         app:layout_constraintEnd_toEndOf="@+id/heading"
         app:layout_constraintStart_toStartOf="@+id/heading" />
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/message"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="@string/hint"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/sendButton"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/heading"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/heading">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/msg"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="@string/hint"-->
+<!--            />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <Button
         android:id="@+id/sendButton"
         android:layout_width="@dimen/btn_block_width"
         android:layout_height="@dimen/btn_height"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/design"
         android:onClick="sendMessage"
         android:text="@string/send"
-        android:textColor="@color/white"
+        app:icon="@drawable/ic_send"
+        android:background="@drawable/design"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/fontSize"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="@+id/message"
@@ -88,7 +108,6 @@
         android:layout_height="@dimen/btn_height"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="100dp"
-        android:background="@drawable/design"
         android:onClick="clickMe"
         android:text="@string/start_alarm"
         android:textColor="@color/white"
@@ -129,6 +148,21 @@
         app:layout_constraintEnd_toEndOf="@+id/textField"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textField" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text button"
+        android:textStyle="bold"
+        android:textSize="@dimen/fontSize"
+        style="@style/ShapeAppearance.MyTheme.SmallComponent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/stopalarm"
+        app:layout_constraintStart_toStartOf="@+id/alarmbtn"
+        app:layout_constraintTop_toBottomOf="@+id/stopalarm"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

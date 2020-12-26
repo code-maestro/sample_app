@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class InternalExternal extends AppCompatActivity {
 
     EditText inputText, internal, external;
@@ -137,6 +136,7 @@ public class InternalExternal extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         external.setText(myData);
 
         Toast.makeText(this,

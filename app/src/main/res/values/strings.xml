@@ -28,6 +28,10 @@
     <string name="hint2">message to be displayed here</string>
     <string name="database">Database</string>
     <string name="int_ext">InternalExternal</string>
+    <string name="add">add</string>
+    <string name="enter_data_here">ENTER DATA HERE..</string>
+    <string name="read_data">READ DATA</string>
+    <string name="view_the_c_program">view the c program</string>
 
     <string-array name="apps">
         <item>keeps</item>
