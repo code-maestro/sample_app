@@ -158,7 +158,8 @@ public class MainActivity extends AppCompatActivity {
                             new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
 
                     return true;
-                } else {
+                }
+                else {
                     mycall = new Intent(Intent.ACTION_CALL, Uri.parse("tel:0706440333"));
                     Toast.makeText(this, "PERMISSION GRANTED", Toast.LENGTH_SHORT)
                             .show();

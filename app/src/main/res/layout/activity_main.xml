@@ -44,25 +44,6 @@
         app:layout_constraintEnd_toEndOf="@+id/heading"
         app:layout_constraintStart_toStartOf="@+id/heading" />
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/message"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="@string/hint"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/sendButton"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/heading"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/heading">-->
-
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:id="@+id/msg"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint="@string/hint"-->
-<!--            />-->
-
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
-
     <Button
         android:id="@+id/sendButton"
         android:layout_width="@dimen/btn_block_width"
@@ -149,20 +130,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textField" />
 
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Text button"
-        android:textStyle="bold"
-        android:textSize="@dimen/fontSize"
-        style="@style/ShapeAppearance.MyTheme.SmallComponent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/stopalarm"
-        app:layout_constraintStart_toStartOf="@+id/alarmbtn"
-        app:layout_constraintTop_toBottomOf="@+id/stopalarm"
-        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
