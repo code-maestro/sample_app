@@ -9,12 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class MyAdapta extends RecyclerView.Adapter<MyAdapta.ViewHolder> {
 
-        String data[];
+        String data;
+
         Context context;
 
-    public MyAdapta(Context cxt, String rvw[]){
+    public MyAdapta(Context cxt, String rvw){
         context =  cxt;
         data = rvw;
     }
@@ -30,12 +33,12 @@ public class MyAdapta extends RecyclerView.Adapter<MyAdapta.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.name.setText(data[position]);
+        holder.name.setText(data);
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return 1;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

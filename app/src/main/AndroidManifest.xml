@@ -27,15 +27,10 @@
             android:exported="true" />
 
         <activity android:name=".InternalExternal"/>
-        <activity android:name=".Main2Activity" />
         <activity android:name=".RecView" />
         <activity android:name=".Cprogram" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Text" />
-        <activity
-            android:name=".Song"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            />
         <activity android:name=".DisplayMessageActivity" />
 
         <activity android:name=".SplashScreen">

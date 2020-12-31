@@ -44,7 +44,7 @@ public class PlayStopService extends Service {
     }
 
     private void notificationStuff(){
-        Intent songUIintent = new Intent(this,Song.class);
+        Intent songUIintent = new Intent(this,MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, songUIintent, 0);
 

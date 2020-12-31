@@ -7,13 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -28,6 +25,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
     Button readInternalBtn;
     File myInternalFile;
     private String mInternalFileName;
+    public String mData;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -92,9 +90,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String data = storedMessage.toString();
+        mData = storedMessage.toString();
 
-        storedMessages.setText(data);
+        storedMessages.setText(mData);
 
     }
 

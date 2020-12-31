@@ -2,6 +2,7 @@ package com.example.sample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,6 @@ import java.util.ArrayList;
 public class Text extends AppCompatActivity {
 
     DatabaseHelper databaseHelper;
-
     ListView list;
 
     @Override
@@ -25,24 +25,24 @@ public class Text extends AppCompatActivity {
         list = findViewById(R.id.list);
         databaseHelper = new DatabaseHelper(this);
 
+        // DATA (The message) passed from the MainActivity to the list view activity
+        // being stored in to the SQLite database and being retrieved into a list view.
+        enterData();
         populateList();
+    }
 
+    private void enterData() {
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("MESSAGE");
+        databaseHelper.addData(message);
     }
 
     public void populateList(){
         Cursor data = databaseHelper.getData();
-
         final ArrayList<String> arrayList = new ArrayList<>();
-
         while (data.moveToNext()){
             arrayList.add(data.getString(1));
         }
-
-        arrayList.add(" Grand Theft Auto ");
-        arrayList.add(" Ty dolla Sign ");
-        arrayList.add(" Wiz khalifa ");
-        arrayList.add(" Drake ");
-        arrayList.add(" Trophies ");
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout
                 .simple_list_item_1, arrayList);
@@ -58,8 +58,6 @@ public class Text extends AppCompatActivity {
                 Toast.makeText(Text.this,
                         " YOU HAVE CLICKED  " + name,
                         Toast.LENGTH_SHORT).show();
-
-
         }
     });
     }

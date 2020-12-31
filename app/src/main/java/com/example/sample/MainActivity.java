@@ -4,10 +4,12 @@ import android.Manifest;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -27,6 +30,10 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    DatabaseHelper mDatabaseHelper;
+    Button playBtn, stopBtn;
+    EditText dataEntry;
 
     private static final int REQUEST_CALL = 1;
 
@@ -63,9 +70,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         registerReceiver(r, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+
     }
 
-    public void clickMe(View view) {
+    public void playSong(View view) {
+        playBtn = findViewById(R.id.playbtn);
+        playBtn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+                startService(new Intent(getApplicationContext(), PlayStopService.class));
+            }
+        });
+    }
+
+    public void stopSong(View view) {
+        stopBtn = findViewById(R.id.stopbtn);
+        stopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopService(new Intent(getApplicationContext(), PlayStopService.class));
+            }
+        });
+    }
+
+    public void alarmFunction(View view) {
         EditText startAlarm = findViewById(R.id.startAlarm);
         String counter_time = startAlarm.getText().toString();
 
@@ -100,19 +129,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessage(View view) {
         EditText message = findViewById(R.id.message);
+
         String msg = message.getText().toString();
 
         if (!msg.isEmpty()) {
-            Intent intent = new Intent(this, DisplayMessageActivity.class);
+            Intent intent = new Intent(this, RecView.class);
             intent.putExtra("MESSAGE", msg);
             startActivity(intent);
 
             message.setText("");
 
         } else {
-            Toast mytoast = Toast.makeText(this, "PLEASE ENTER A MESSAGE TO SEND ! ", Toast.LENGTH_SHORT);
-            mytoast.setGravity(Gravity.CENTER, 0, -600);
-            mytoast.show();
+           Toast.makeText(this, "PLEASE ENTER A MESSAGE TO SEND ! ",
+                    Toast.LENGTH_SHORT).show();
             message.requestFocus();
         }
     }
@@ -129,9 +158,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.text:
                 startActivity(new Intent(this, Text.class));
                 return true;
-            case R.id.song:
-                startActivity(new Intent(this, Song.class));
-                return true;
             case R.id.recycler:
                 startActivity(new Intent(this, RecView.class));
                 return true;
@@ -141,10 +167,6 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.c:
                 startActivity(new Intent(this, Cprogram.class));
-                return true;
-
-            case R.id.sqlite:
-                startActivity(new Intent(this, Main2Activity.class));
                 return true;
 
             case R.id.call:
@@ -158,8 +180,7 @@ public class MainActivity extends AppCompatActivity {
                             new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
 
                     return true;
-                }
-                else {
+                } else {
                     mycall = new Intent(Intent.ACTION_CALL, Uri.parse("tel:0706440333"));
                     Toast.makeText(this, "PERMISSION GRANTED", Toast.LENGTH_SHORT)
                             .show();
@@ -185,6 +206,36 @@ public class MainActivity extends AppCompatActivity {
 
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void addData(View view) {
+    //Add a new Branch record
+        ContentValues values = new ContentValues();
+        values.put(MyContentProvider.NAME,
+                ((EditText) findViewById(R.id.entry)).getText().toString());
+
+        Uri uri = getContentResolver().insert(
+                MyContentProvider.CONTENT_URI, values);
+
+        Toast.makeText(getBaseContext(),
+                uri.toString(), Toast.LENGTH_LONG).show();
+    }
+
+    public void readData(View view) {
+        String URL = "content://com.example.sample.MyContentProvider";
+
+        Uri branches = Uri.parse(URL);
+        Cursor c = managedQuery(branches, null, null, null,
+                "name");
+
+        if (c.moveToFirst()) {
+            do {
+                Toast.makeText(this,
+                        c.getString(c.getColumnIndex(MyContentProvider._ID)) +
+                                ", " + c.getString(c.getColumnIndex(MyContentProvider.NAME)),
+                        Toast.LENGTH_SHORT).show();
+            } while (c.moveToNext());
         }
     }
 }

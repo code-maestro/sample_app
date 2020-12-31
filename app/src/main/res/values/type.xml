@@ -16,8 +16,8 @@
     </style>
 
     <style
-        name="TextAppearance.MyTheme.Headline5"
-        parent="TextAppearance.MaterialComponents.Headline5">
+        name="TextAppearance.MyTheme.Headline6"
+        parent="TextAppearance.MaterialComponents.Headline6">
         <item name="fontFamily">
             @font/coolest
         </item>
