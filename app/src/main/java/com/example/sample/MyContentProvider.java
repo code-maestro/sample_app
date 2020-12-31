@@ -79,7 +79,6 @@ public class MyContentProvider extends ContentProvider {
     public boolean onCreate() {
         Context context = getContext();
         DatabaseHelper dbHelper = new DatabaseHelper(context);
-
         /**
          * Create a write able database which will trigger its
          * creation if it doesn't already exist.

@@ -23,6 +23,7 @@ public class Text extends AppCompatActivity {
         setContentView(R.layout.activity_text);
 
         list = findViewById(R.id.list);
+
         databaseHelper = new DatabaseHelper(this);
 
         // DATA (The message) passed from the MainActivity to the list view activity

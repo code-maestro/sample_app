@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sample">
-
+    <!-- PERMISSIONS required by the Android system for the features -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
@@ -10,7 +10,10 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".Notification"
@@ -20,19 +23,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LocationLayer"></activity>
+        <activity android:name=".MyLocationActivity" />
 
-        <receiver
-            android:name=".MyReceiver"
-            android:enabled="true"
-            android:exported="true" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${mapsApiKey}" />
 
-        <activity android:name=".InternalExternal"/>
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".InternalExternal" />
         <activity android:name=".RecView" />
         <activity android:name=".Cprogram" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Text" />
-        <activity android:name=".DisplayMessageActivity" />
-
+        <activity android:name=".DisplayMessageActivity" /> <!-- The splash screen activity that is launched when the application is started -->
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,17 +44,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <!--
+   The receiver tag to receive intents that Broadcast by the System or other apps or
+                Locally in the app
+        -->
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true" /> <!-- Service tag for the Android System to run the service in the application -->
         <service
             android:name=".PlayStopService"
             android:enabled="true"
             android:exported="false" />
-
+        <!--
+ provider tag to include the content provider in our application and
+              for other applications to use
+        -->
         <provider
-            android:authorities="com.example.myApp"
             android:name=".MyContentProvider"
-            android:exported="false" />
-
+            android:authorities="com.example.myApp"
+            android:exported="true" />
     </application>
 
 </manifest>

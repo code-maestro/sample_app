@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         String msg = message.getText().toString();
 
         if (!msg.isEmpty()) {
-            Intent intent = new Intent(this, RecView.class);
+            Intent intent = new Intent(this, Text.class);
             intent.putExtra("MESSAGE", msg);
             startActivity(intent);
 
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.setData(Uri.parse("mailto:"));
                 String[] to = {"killopoop@gmail.com",
-                        "edgarbaluku@gmail.com",
+                                "edgarbaluku@gmail.com",
                         "derek.barigye@gmail.com"};
                 email.putExtra(Intent.EXTRA_EMAIL, to);
                 email.putExtra(Intent.EXTRA_SUBJECT, "EMAIL WORK ANDROID");
@@ -199,9 +199,12 @@ public class MainActivity extends AppCompatActivity {
                 email.setType("message/rfc822");
                 startActivity(email);
 
-
             case R.id.int_ext:
                 startActivity(new Intent(this, InternalExternal.class));
+                return true;
+
+            case R.id.maps:
+                startActivity(new Intent(this, MapsActivity.class));
                 return true;
 
             default:
