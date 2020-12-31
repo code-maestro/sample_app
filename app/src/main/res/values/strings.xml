@@ -35,8 +35,4 @@
     <string name="songPlayer">Song Player implementing a Foreground Service</string>
     <string name="SQLiteContentProvider">Data stored into the SQLite DB through content provider
     </string>
-
-    <string name="googl_maps_API_key" translatable="false"></string>
-
-
 </resources>
