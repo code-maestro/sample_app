@@ -1,0 +1,231 @@
+[33mcommit b31d2614e5e00f8285dc0278202fde6aaa8e3eff[m[33m ([m[1;36mHEAD -> [m[1;32mcontent_provider[m[33m)[m
+Author: mikael <michaelajnew@gmail.com>
+Date:   Thu Dec 31 19:09:54 2020 +0300
+
+    MapsActivity added
+
+[33mcommit 99732b66fe5a90dd66c350fc46d674048085ae9d[m
+Author: mikael <michaelajnew@gmail.com>
+Date:   Thu Dec 31 19:09:35 2020 +0300
+
+    MapsActivity added
+
+[33mcommit a79f61669edbddf85d21a891d8f2c6f522e81e09[m
+Author: mikael <michaelajnew@gmail.com>
+Date:   Thu Dec 31 12:33:40 2020 +0300
+
+    Content Providers and UI updates
+
+[33mcommit ce9a6c358186073a33f38891ab03c8abe045ac01[m
+Author: mikael <michaelajnew@gmail.com>
+Date:   Wed Dec 30 13:30:26 2020 +0300
+
+    Added Frame Layout and cardview to the recyclerview for better
+    representation of the data.
+
+[33mcommit 312a3d9127960bb58d157f7b45851243fa6a5b69[m
+Author: mikael <michaelajnew@gmail.com>
+Date:   Sat Dec 26 20:40:14 2020 +0300
+
+    Added the content provider following the book code and instructions
+    but i don't understand how to check if the code is working sooo
+    but it runs perfectly so that should be a good thing i think
+
+[33mcommit 5ee07f6ca3f6ee17dbec212c9946b3af29541fe8[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Mon Dec 7 15:00:56 2020 +0300
+
+    Added the foreground service notification functionality
+
+[33mcommit 3d774f253d468eed810b2e193c0e296babb4ae55[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Sun Dec 6 11:20:26 2020 +0300
+
+    Added the functionality to store and retrieve the messages passed from the main Activity to the display message Activity through the IntentExtra from the internal storage.
+
+[33mcommit 6a0f3dd42973230a935623c9511f7d8e9248b35a[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Sun Dec 6 11:16:24 2020 +0300
+
+    Added the functionality to store and retrieve the messages passed from the main Activity to the display message Activity through the IntentExtra from the internal storage.
+
+[33mcommit c07552562ef9929ae39246f1c40cc5c583eda7a6[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Sat Dec 5 13:43:03 2020 +0300
+
+    Refactored the functions to writeTo and readFrom the Internal and External Storage.
+
+[33mcommit 720181a1e0703ab5a4a3ea36a7baaad2d06e7c8c[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Sat Dec 5 13:39:29 2020 +0300
+
+    Added the Functionality to store and retrieve data from files stored on both the Internal and External Storage and display the results onto an EditText Component of the InternalExternal Activity.
+
+[33mcommit b55240d2d2cbe78540f88e5f9d381ac296b12329[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Sat Dec 5 11:26:32 2020 +0300
+
+    Added an InternalExternal activity to store all the data entered into to a file
+    this can be accessed through the menu icons on the left of the main activity.
+
+[33mcommit 7fbb6fd109aab959e923bd6400818df30f849df7[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Fri Dec 4 23:37:36 2020 +0300
+
+    Added a Read from Internal storage function *method* and tweaked the DisplayMessageActivity to display the previously saved messages.
+
+[33mcommit bad1964dfca1d5b4ab17cfc63bc03cdc6ef18f86[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Fri Dec 4 23:35:47 2020 +0300
+
+    Added a Read from Internal storage function *method* and tweaked the DisplayMessageActivity to display the previously saved messages.
+
+[33mcommit eba783215a696900ddf4e1b9f8cd2981c1af2073[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Fri Dec 4 17:16:09 2020 +0300
+
+    IMPLEMENTED THE WRITING OF FILES TO THE INTERNAL STORAGE
+
+[33mcommit 5d1069641e957e968838e9074128cdc534f49d19[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Fri Dec 4 16:48:24 2020 +0300
+
+    Added the background service for playing the song
+
+[33mcommit 86ef3412d64ef4879863242c44c036078a60245e[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Fri May 1 12:08:12 2020 +0300
+
+    Implemented the SQLite database ie inserting data into the database and retrieving data in a listview and a foreground service showing a notification
+
+[33mcommit ec4ea67b3e093b82d209b8ca03f36551f32ea5f7[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Fri May 1 12:07:43 2020 +0300
+
+    Implemented the SQLite database ie inserting data into the database and retrieving data in a listview and a foreground service showing a notification
+
+[33mcommit de1fb8ed51bc87ef54919980536c71fff8715fb0[m
+Author: code_maestro <michaelajnew@gmail.com>
+Date:   Fri May 1 11:59:48 2020 +0300
+
+    Implemented the SQLite database and a foreground service showing a notification
+
+[33mcommit 6b2d9827bce90f414a9acfd0ab89773ecf126c2c[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Wed Mar 11 09:58:18 2020 +0300
+
+    implemented the alarm..
+    Done as group work by
+    BALUKU EDGAR 2018/BIT/036/PS
+    NINSIIMA DOREEN 2018/BIT/086/PS
+    BARIGYE DEREK 2018/BIT/036/PS
+    AJUNA MICHAEL 2018/BIT/020/PS
+
+[33mcommit 7f93617b955a37e9f538ad606d18996daab6d74e[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Wed Mar 11 09:30:05 2020 +0300
+
+    implemented the alarm..
+
+[33mcommit 6f3a5783112c9168a3a92087985f5546d2473883[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Wed Mar 11 09:21:40 2020 +0300
+
+    implemented the alarm..
+
+[33mcommit 5aa51cdf4374919a81ef617e10149c2e6a3efc5a[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Wed Mar 11 09:05:46 2020 +0300
+
+    implemented the alarm..
+
+[33mcommit 6b5c57d6a47cb7d3be327f7deaa766efd94f14b8[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Fri Mar 6 22:36:24 2020 +0300
+
+    implemented battery changed action
+    Group work
+
+[33mcommit fc74d78559256a8ba01177cf9a5676cbf471de68[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Thu Mar 5 15:02:34 2020 +0300
+
+    progress bar
+
+[33mcommit 97dee29d2a00b8811b22fb449dafc9a5946605a1[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Thu Mar 5 12:29:47 2020 +0300
+
+    Added an implicit intent, a user permission in the manifest to enable calling and a sending a email to  a list of people.
+
+[33mcommit 3c1cfbb185db80ab24866cab65c4a935472c5917[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Tue Feb 25 22:45:01 2020 +0300
+
+    Added a list view activity and a recycler view activity
+
+[33mcommit 77e4b5d10c5ada0e8cff7482f20b1b17ec55d720[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Mon Feb 24 09:44:44 2020 +0300
+
+    Added a list view activity and a recycler view activity
+
+[33mcommit d88c8f1349be123c50fa2b615b362029c6feb941[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Tue Feb 18 22:21:56 2020 +0300
+
+    Added an activity that plays a song and has a C program and a text file with the my name and registration number...
+
+[33mcommit 1b8eac3bad3cf8c9334d2ad45998a503406ef84b[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Thu Feb 13 13:29:23 2020 +0300
+
+    Hello world
+
+[33mcommit 7a53a75ef725d036abc4f4f5180c8a7377bb3cdf[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Thu Feb 13 13:23:53 2020 +0300
+
+    Hello world
+
+[33mcommit 7901ba175f4508a44e5da26e44a1c9bbcbcf29ec[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Wed Feb 12 08:20:58 2020 +0300
+
+    Hello world
+
+[33mcommit 44c9eaf35e7f1f17fa3116749a6ecfab0e31532d[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Mon Feb 10 09:50:36 2020 +0300
+
+    Hello world
+
+[33mcommit e34e4f7ed760adcb7fdd62e9841acfccf2df8f4f[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Fri Feb 7 12:03:29 2020 +0300
+
+    Hello world
+
+[33mcommit 5ff91e21a6af3f4975381a58b4cdf793ecf3f51b[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Thu Feb 6 16:47:22 2020 +0300
+
+    Hello world
+
+[33mcommit b154d94c522d08411956ce9c621b64c459b33211[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Wed Feb 5 22:17:58 2020 +0300
+
+    Hello world
+
+[33mcommit ec04b5be3d92491e674e0f4badb57f4a48907eba[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Wed Feb 5 11:16:10 2020 +0300
+
+    Hello world
+
+[33mcommit b2db578aa1a714866e1e327f6c9bfc8d3757c626[m
+Author: ATWIINE GILBERT <michaelajnew@gmail.com>
+Date:   Wed Feb 5 10:55:01 2020 +0300
+
+    Hello world
